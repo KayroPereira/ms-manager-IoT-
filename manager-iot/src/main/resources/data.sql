@@ -1,3 +1,3 @@
-INSERT INTO tb_device_water_tank (name, mac, status) VALUES ('Device_1', '76A24B', true);
-INSERT INTO tb_device_water_tank (name, mac, status) VALUES ('Device_2', 'AC452', false);
-INSERT INTO tb_device_water_tank (name, mac, status) VALUES ('Device_3', 'CB43EF', true);
+INSERT INTO tb_device_water_tank (model, mac, name, status) VALUES ('WTV1', '12D903', 'Device_1', true);
+INSERT INTO tb_device_water_tank (model, mac, name, status) VALUES ('WTV4', 'E678B4', 'Device_2', false);
+INSERT INTO tb_device_water_tank (model, mac, name, status) VALUES ('SCV1', 'CB43EF', 'Device_3', true);

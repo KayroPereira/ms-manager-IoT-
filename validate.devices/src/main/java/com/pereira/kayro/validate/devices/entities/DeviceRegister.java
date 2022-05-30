@@ -1,26 +1,26 @@
-package com.pereira.kayro.manageriot.entities;
+package com.pereira.kayro.validate.devices.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 
-@Table(name = "tb_device_water_tank")
-public class DeviceWaterTank {
+@Entity
+public class DeviceRegister {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String model;
     private String mac;
-    private String name;
-    private Boolean status;
 }

@@ -3,10 +3,7 @@ package com.pereira.kayro.manageriot.controller;
 import com.pereira.kayro.manageriot.entities.DeviceWaterTank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.pereira.kayro.manageriot.repository.DeviceWaterTankRepository;
 
 import java.util.List;
@@ -28,5 +25,12 @@ public class DeviceWaterTankController {
     public ResponseEntity<DeviceWaterTank> findById(@PathVariable Long id){
         DeviceWaterTank device = deviceWaterTankRepository.findById(id).get();
         return  ResponseEntity.ok(device);
+    }
+
+    @GetMapping("/device-filter")
+    public ResponseEntity<DeviceWaterTank> findByIdAndModelAndMac(@RequestParam String model, @RequestParam String mac){
+        System.out.println("mac: " + mac + " model: " + model);
+        DeviceWaterTank device = deviceWaterTankRepository.findByModelAndMac(model, mac);
+        return ResponseEntity.ok(device);
     }
 }
