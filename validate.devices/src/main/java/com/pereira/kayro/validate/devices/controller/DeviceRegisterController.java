@@ -38,7 +38,8 @@ public class DeviceRegisterController{
     @ApiOperation(value = "",
             notes = "Receives an id number registered in the \"manager-iot\" service then performs a query in this service " +
                     "to obtain all the device data. Afterwards, a query is performed in the local database with the data obtained in the " +
-                    "previous query. If the device exists in the database, return true, otherwise, return false.")
+                    "previous query. If the device exists in the database, return true, otherwise, return false. \n\n" +
+                    "Depends on microservice \"manager-iot\" is online")
     public ResponseEntity<DeviceRegister> isValid(@PathVariable Long id){
         DeviceRegister deviceRegister = deviceRegisterService.getDevice(id);
 
